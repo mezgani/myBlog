@@ -1,44 +1,44 @@
-<html>
-<head>
-</head>
-
-<body>
 
 <div>
-<h1 class="font-sans text-4xl text-blue-500" align="right">MEZGANI Ali</h1><br>
+
+<h1 class="font-serif text-4xl text-blue-500" align="right">MEZGANI Ali</h1><br>
   <% Post.all.each do |post| %>    
    
 
-<figure class="md:flex bg-slate-100 rounded-xl p-8 md:p-0 dark:bg-slate-800">
-   
+<figure class="border-1 border-gray-500 md:flex bg-slate-100 rounded-xl p-8 md:p-0 dark:bg-slate-800">
+<div class="p-6 hover:bg-blue-100
+                    hover:text-black transition
+                    duration-900 ease-in md:flex bg-slate-100 rounded-xl p-8 md:p-0">  
   <div class="pt-6 md:p-8 text-center md:text-left space-y-4">
     <blockquote>
-    <p class="text-sm font-sans justify-end">
+    <p class="text-sm font-serif justify-end">
     <u><%= post.title %></u> 
     <br><br> 
     </p>
-      <p class="text-sm font-sans justify-end" align="justify">
+      <p class="text-sm font-serif justify-end" align="justify">
        <%= post.content %>
       </p>
     </blockquote>
-    <figcaption class="text-sm font-sans">
+    
+    <p class="text-sm font-serif justify-end text-orange-500" data-controller="hello" data-action="click->hello#handleClick"></p>
+    
+    <figcaption class="text-sm font-serif">
       <div class="text-sky-500 dark:text-sky-400">
         <%= post.name %>
       </div>
-      <div class="text-sm font-sans">
+      <div class="text-sm font-serif">
         <%= post.updated_at %>
       </div>
     </figcaption>
   </div>
 </figure>
 
-<!--<p data-controller="hello" data-action="click->hello#handleClick"></p>
--->
-<br>
 
- <% end %>
 
 <br>
+<% end %>
+<br>
 
-</body>
-</html>
+
+<%# Render the navigation bar in your views %>
+<%== @pagy %>

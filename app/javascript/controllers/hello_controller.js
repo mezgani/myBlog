@@ -1,12 +1,17 @@
 import { Controller } from "@hotwired/stimulus"
 import _ from "lodash"
 
+
 export default class extends Controller {
   connect() {
-    this.element.textContent = "Click here"
+    this.element.textContent = "More ...";
   }
 
+
   handleClick() {
-    this.element.textContent = _.intersection([2, 1], [2, 3]);
+    var array = ["Mezgani"]
+    this.element.textContent = "";
   }
 }
+
+
