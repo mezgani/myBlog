@@ -1,0 +1,16 @@
+<div>
+<h1 class="font-bold text-4xl text-blue-500">Mezgani Blog</h1>
+  <% Post.all.each do |post| %>
+    <h3 class="font-sans text-2xl text-gray-400"><%= post.title %></h3>
+    <p><h3 class="font-sans text-1xl text-black-400"><%= post.content %></h3></p>
+    <p><h3 class="font-sans text-1xl text-black-400">Author: <%= post.name %></h3></p>
+  <% end %>
+  <p data-controller="hello" data-action="click->hello#handleClick"></p>
+</div>
+
+
+
+
+
+
+
