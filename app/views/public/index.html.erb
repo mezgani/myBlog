@@ -5,7 +5,7 @@
 <body>
 
 <div>
-<h1 class="font-sans text-4xl text-blue-500" align="right">MEZGANI Blog</h1><br>
+<h1 class="font-sans text-4xl text-blue-500" align="right">MEZGANI Ali</h1><br>
   <% Post.all.each do |post| %>    
    
 
@@ -14,7 +14,8 @@
   <div class="pt-6 md:p-8 text-center md:text-left space-y-4">
     <blockquote>
     <p class="text-sm font-sans justify-end">
-    <%= post.title %><br><br> 
+    <u><%= post.title %></u> 
+    <br><br> 
     </p>
       <p class="text-sm font-sans justify-end">
        <%= post.content %>
