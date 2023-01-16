@@ -1,16 +1,43 @@
+<html>
+<head>
+</head>
+
+<body>
+
 <div>
-<h1 class="font-bold text-4xl text-blue-500">Mezgani Blog</h1>
-  <% Post.all.each do |post| %>
-    <h3 class="font-sans text-2xl text-gray-400"><%= post.title %></h3>
-    <p><h3 class="font-sans text-1xl text-black-400"><%= post.content %></h3></p>
-    <p><h3 class="font-sans text-1xl text-black-400">Author: <%= post.name %></h3></p>
-  <% end %>
-  <p data-controller="hello" data-action="click->hello#handleClick"></p>
-</div>
+<h1 class="font-sans text-4xl text-blue-500" align="right">MEZGANI Blog</h1><br>
+  <% Post.all.each do |post| %>    
+   
 
+<figure class="md:flex bg-slate-100 rounded-xl p-8 md:p-0 dark:bg-slate-800">
+   
+  <div class="pt-6 md:p-8 text-center md:text-left space-y-4">
+    <blockquote>
+    <p class="text-sm font-sans justify-end">
+    <%= post.title %><br><br> 
+    </p>
+      <p class="text-sm font-sans justify-end">
+       <%= post.content %>
+      </p>
+    </blockquote>
+    <figcaption class="text-sm font-sans">
+      <div class="text-sky-500 dark:text-sky-400">
+        <%= post.name %>
+      </div>
+      <div class="text-sm font-sans">
+        <%= post.updated_at %>
+      </div>
+    </figcaption>
+  </div>
+</figure>
 
+<!--<p data-controller="hello" data-action="click->hello#handleClick"></p>
+-->
+<br>
 
+ <% end %>
 
+<br>
 
-
-
+</body>
+</html>
