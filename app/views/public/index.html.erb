@@ -1,7 +1,4 @@
-
-
-<!--<div class="bg-cover bg-center" style="background-image:url('https://wallpaperset.com/w/full/e/e/9/517938.jpg')">
--->
+<%= render "layouts/alert" %>
 <div>
 <h1 class="font-serif text-4xl text-blue-500" align="right">MEZGANI Ali</h1><br>
 
@@ -10,7 +7,7 @@
 <% if user_signed_in? %>
   Logged in as <strong><%= current_user.email %></strong> | 
   <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %> |
-  <%= link_to "Posts", posts_path, :class => 'navbar-link' %>
+  <%= link_to "Posts", posts_path, :class => 'navbar-link' %> 
 <% else %>
   <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
   <%= link_to "Sign in", new_user_session_path, :class => 'navbar-link'  %>
@@ -56,7 +53,11 @@
 <br>
 <% end %>
 <br>
+</main>
 
 
+<div class="footer" align="center">
 <%# Render the navigation bar in your views %>
-<%#== pagy_nav(@pagy) %>
+<%== pagy_nav(@pagy) %>
+</br>
+</div>
