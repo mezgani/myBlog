@@ -1,7 +1,25 @@
 
-<div>
 
+<!--<div class="bg-cover bg-center" style="background-image:url('https://wallpaperset.com/w/full/e/e/9/517938.jpg')">
+-->
+<div>
 <h1 class="font-serif text-4xl text-blue-500" align="right">MEZGANI Ali</h1><br>
+
+
+<div align="right" ="white">
+<% if user_signed_in? %>
+  Logged in as <strong><%= current_user.email %></strong> | 
+  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %> |
+  <%= link_to "Posts", posts_path, :class => 'navbar-link' %>
+<% else %>
+  <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
+  <%= link_to "Sign in", new_user_session_path, :class => 'navbar-link'  %>
+<% end %>
+
+
+</div>
+<br>
+
   <% Post.all.each do |post| %>    
    
 
@@ -11,22 +29,22 @@
                     duration-900 ease-in md:flex bg-slate-100 rounded-xl p-8 md:p-0">  
   <div class="pt-6 md:p-8 text-center md:text-left space-y-4">
     <blockquote>
-    <p class="text-sm font-serif justify-end">
-    <u><%= post.title %></u> 
+    <p class="block font-medium mb-1 justify-end">
+    <%= post.title %>
     <br><br> 
     </p>
-      <p class="text-sm font-serif justify-end" align="justify">
+      <p class="block font-medium mb-1 justify-end" align="justify">
        <%= post.content %>
       </p>
     </blockquote>
     
-    <p class="text-sm font-serif justify-end text-orange-500" data-controller="hello" data-action="click->hello#handleClick"></p>
+    <p class="block font-medium mb-1 justify-end text-orange-500" data-controller="hello" data-action="click->hello#handleClick"></p>
     
-    <figcaption class="text-sm font-serif">
+    <figcaption class="block font-medium mb-1">
       <div class="text-sky-500 dark:text-sky-400">
         <%= post.name %>
       </div>
-      <div class="text-sm font-serif">
+      <div class="block font-medium mb-1">
         <%= post.updated_at %>
       </div>
     </figcaption>
@@ -41,4 +59,4 @@
 
 
 <%# Render the navigation bar in your views %>
-<%== @pagy %>
+<%#== pagy_nav(@pagy) %>

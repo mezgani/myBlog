@@ -1,3 +1,4 @@
+<% if current_user %>
 <div class="mx-auto md:w-2/3 w-full flex">
   <div class="mx-auto">
     <% if notice.present? %>
@@ -13,3 +14,4 @@
     <%= link_to 'Back to posts', posts_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
   </div>
 </div>
+<% end %>

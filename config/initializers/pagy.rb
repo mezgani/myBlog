@@ -1,8 +1,12 @@
 # frozen_string_literal: true
-
+require 'pagy/extras/metadata'
 # Pagy initializer file (6.0.1)
 # Customize only what you really need and notice that the core Pagy works also without any of the following lines.
 # Should you just cherry pick part of this file, please maintain the require-order of the extras
+# Optionally override some pagy default with your own in the pagy initializer
+#Pagy::DEFAULT[:items] = 3        # items per page
+#Pagy::DEFAULT[:size]  = [1,1,1,1] # nav bar links
+Pagy::DEFAULT[:items] = 3
 
 
 # Pagy DEFAULT Variables
