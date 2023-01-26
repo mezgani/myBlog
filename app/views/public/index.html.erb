@@ -5,7 +5,7 @@
 
 <div align="right" ="white">
 <% if user_signed_in? %>
-  Logged in as <strong><%= current_user.email %></strong> | 
+  Logged in as <b><%= current_user.email %></b> | 
   <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %> |
   <%= link_to "Posts", posts_path, :class => 'navbar-link' %> 
 <% else %>
@@ -26,9 +26,12 @@
                     duration-900 ease-in md:flex bg-slate-100 rounded-xl p-8 md:p-0">  
   <div class="pt-6 md:p-8 text-center md:text-left space-y-4">
     <blockquote>
-    <p class="block font-medium mb-1 justify-end">
-    <%= post.title %>
+    <p class="block text-xl mb-1 justify-end">
+    <%= post.title %> 
+    <p class="block font-small mb-1 text-blue-500">
+    <%= post.content.scan(/\w+/).length / 200 %> min read | <%= post.content.scan(/\w+/).length %> words
     <br><br> 
+    </p>
     </p>
       <p class="block font-medium mb-1 justify-end" align="justify">
        <%= post.content %>

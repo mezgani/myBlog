@@ -8,10 +8,18 @@
   <div class="flex justify-between items-center">
     <h1 class="font-bold text-4xl">Posts</h1>
     <%= link_to 'New post', new_post_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
+    
   </div>
 
   <div id="posts" class="min-w-full" align="justify">
     <%= render @posts %>
   </div>
 </div>
+<!--
+<div class="footer" align="center">
+<%# Render the navigation bar in your views %>
+<%== pagy_nav(@pagy) %>
+</br>
+</div>
+-->
 <% end %>
