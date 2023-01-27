@@ -45,7 +45,7 @@ module.exports = {
       },
     extend: {
       fontFamily: {
-        sans: 'Optima', 'sans-serif',
+        sans: ['Optima', 'sans-serif'],
       },
     },
   },
