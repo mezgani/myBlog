@@ -1,66 +1,51 @@
 <%= render "layouts/alert" %>
 <div>
-<h1 class="font-serif text-4xl text-blue-500" align="right">MEZGANI Ali</h1><br>
-
-
-<div align="right" ="white">
+<h1 class="text-sans text-4xl text-blue-500" align="right">MEZGANI Ali</h1><br>
+<div  class="text-sans" align="right">
 <% if user_signed_in? %>
   Logged in as <b><%= current_user.email %></b> | 
-  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %> |
-  <%= link_to "Posts", posts_path, :class => 'navbar-link' %> 
+  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link text-sans'  %> |
+  <%= link_to "Posts", posts_path, :class => 'navbar-link text-sans' %> 
 <% else %>
-  <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-  <%= link_to "Sign in", new_user_session_path, :class => 'navbar-link'  %>
+  <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link text-sans'  %> |
+  <%= link_to "Sign in", new_user_session_path, :class => 'navbar-link text-sans'  %>
 <% end %>
-
-
 </div>
 <br>
 
-  <% Post.all.each do |post| %>    
-   
-
-<figure class="border-1 border-gray-500 md:flex bg-slate-100 rounded-xl p-8 md:p-0 dark:bg-slate-800">
-<div class="p-6 hover:bg-blue-100
-                    hover:text-black transition
-                    duration-900 ease-in md:flex bg-slate-100 rounded-xl p-8 md:p-0">  
-  <div class="pt-6 md:p-8 text-center md:text-left space-y-4">
-    <blockquote>
-    <p class="block text-xl mb-1 justify-end">
-    <%= post.title %> 
-    <p class="block font-small mb-1 text-blue-500">
-    <%= post.content.scan(/\w+/).length / 200 %> min read | <%= post.content.scan(/\w+/).length %> words
-    <br><br> 
-    </p>
-    </p>
-      <p class="block font-medium mb-1 justify-end" align="justify">
-       <%= post.content %>
-      </p>
-    </blockquote>
-    
-    <p class="block font-medium mb-1 justify-end text-orange-500" data-controller="hello" data-action="click->hello#handleClick"></p>
-    
-    <figcaption class="block font-medium mb-1">
-      <div class="text-sky-500 dark:text-sky-400">
-        <%= post.name %>
-      </div>
-      <div class="block font-medium mb-1">
-        <%= post.updated_at %>
-      </div>
-    </figcaption>
+<% Post.all.each do |post| %>    
+  <figure class="border-3 border-black-5 md:flex bg-slate-100 rounded-xl p-8 md:p-0 dark:bg-slate-800">
+    <div class="p-6 hover:bg-blue-100 hover:text-black transition duration-900 ease-in md:flex bg-slate-100 rounded-xl p-8 md:p-0">  
+      <div class="pt-6 md:p-8 text-center md:text-left space-y-3">
+        <blockquote>
+          <p class="text-sans block text-xl mb-10 justify-end"><b>
+            <%= post.title %></b>
+              <p class="text-sans block font-small mb-1 text-blue-400">
+                <%= post.get_date_formated %> | <%=  post.get_content_words %>  | <%= post.get_content_length %> 
+                <hr><br><br> 
+              </p>
+          </p>
+          <p class="block text-sans font-medium mb-1 text-black-500 justify-end" align="justify">
+            <%= post.content %>
+          </p>
+        </blockquote>
+    <p class="block text-sans font-medium mb-1 justify-end text-orange-500" data-controller="hello" data-action="click->hello#handleClick"></p>
+      <figcaption class="block text-sans font-medium mb-1">
+        <div class="text-gray-500 dark:text-gray-400">
+          <%= post.name %>
+        </div>
+      </figcaption>
+    </div>
   </div>
 </figure>
-
-
 
 <br>
 <% end %>
 <br>
-</main>
 
 
-<div class="footer" align="center">
+<div class="footer text-sans block font-medium mb-1 justify-end text-orange-500" align="center">
 <%# Render the navigation bar in your views %>
 <%== pagy_nav(@pagy) %>
-</br>
+<br>
 </div>
