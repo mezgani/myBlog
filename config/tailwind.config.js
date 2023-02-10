@@ -1,3 +1,4 @@
+
 const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
@@ -45,7 +46,7 @@ module.exports = {
       },
     extend: {
       fontFamily: {
-        sans: 'Optima', 'sans-serif',
+        sans: ['Optima','sans-serif'],
       },
     },
   },
@@ -60,4 +61,5 @@ module.exports = {
     },
   ]
 }
+
 

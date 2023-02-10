@@ -4,6 +4,7 @@ class PostsController < ApplicationController
   # GET /posts or /posts.json
   def index 
     @posts = Post.all
+    @posts = @posts..order('created_at DESC')
     @pagy, @records = pagy(Post.all)
   end
 
