@@ -4,7 +4,7 @@ import _ from "lodash"
 
 export default class extends Controller {
   connect() {
-    this.element.textContent = "More ...";
+    this.element.textContent = "... إقرأ المزيد" ;
   }
 
 

@@ -1,3 +1,4 @@
+# coding: utf-8
 class Post < ApplicationRecord
 
 
@@ -7,11 +8,11 @@ end
 
 
 def get_content_length 
-    return "#{self.content.scan(/\w+/).length} words"
+    return "#{self.content.scan(/\w+/).length} كلمة"
 end
 
 def get_content_words
-    return "#{self.content.scan(/\w+/).length / 200} min read"
+    return "#{self.content.scan(/\w+/).length / 200} دقائق"
 end
 
 end

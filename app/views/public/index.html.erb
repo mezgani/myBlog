@@ -1,7 +1,7 @@
 <%= render "layouts/alert" %>
 <div>
-<h1 class="text-sans text-4xl text-blue-500" align="right">MEZGANI Ali</h1><br>
-<div  class="text-sans" align="right">
+<h1 class="text-sans text-4xl text-black-500" align="left">الخليفة الرسول الإمام المهدي</h1><br>
+<div  class="text-sans" align="left">
 <% if user_signed_in? %>
   Logged in as <b><%= current_user.email %></b> | 
   <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link text-sans'  %> |
@@ -14,18 +14,18 @@
 <br>
 
 <% @records.order('created_at DESC').each do |post| %>    
-  <figure class="border-3 border-black-5 md:flex bg-slate-100 rounded-xl p-8 md:p-0 dark:bg-slate-800">
-    <div class="p-6 hover:bg-blue-100 hover:text-black transition duration-900 ease-in md:flex bg-slate-100 rounded-xl p-8 md:p-0">  
-      <div class="pt-6 md:p-8 text-center md:text-left space-y-3">
-        <blockquote>
-          <p class="text-sans block text-xl mb-10 justify-end"><b>
-            <%= post.title %></b>
+  <figure dir="rtl" class="border-3 border-black-5 md:flex bg-slate-100 rounded-xl p-8 md:p-0 dark:bg-slate-800 text-justify">
+    <div class="p-6 hover:bg-green-100 hover:text-black transition duration-900 ease-in md:flex bg-slate-100 rounded-xl p-8 md:p-0">  
+    <div class="pt-6 md:p-8 text-right md:text-justify space-y-3">
+      <blockquote>
+          <p class="text-sans text-right block text-xl mb-10 justify-start" align="right"><b>
+            <%= post.title %></b></p>
               <p class="text-sans block font-small mb-1 text-blue-400">
-                <%= post.get_date_formated %> | <%=  post.get_content_words %>  | <%= post.get_content_length %> 
+                <%= post.get_date_formated %> 
                 <hr><br><br> 
               </p>
           </p>
-          <p class="block text-sans font-medium mb-1 text-black-500 justify-end" align="justify">
+          <p class="block text-sans font-medium mb-1 text-black-500 text-justify" align="justify">
             <%= post.content %>
           </p>
         </blockquote>
